@@ -53,8 +53,6 @@ public class VehicleServiceImpl implements VehicleService {
 
             vehicle.setUser(user);
 
-            System.out.println(vehicle.getDay_of_week());
-
             Vehicle vehicleSaved = vehicleRepository.save(vehicle);
 
             return new ResponseEntity(vehicleSaved, HttpStatus.CREATED);
