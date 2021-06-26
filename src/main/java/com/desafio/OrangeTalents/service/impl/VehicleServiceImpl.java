@@ -27,8 +27,6 @@ public class VehicleServiceImpl implements VehicleService {
     @Transactional
     public ResponseEntity saveVehicle(String cpf, String type, Integer marca_id, Integer modelo_id, String ano) {
         try {
-
-            System.out.println(requestFipeApi + "/carros/" + "" + "" + "");
             Vehicle vehicle = requestFipeApi.getVehicle(type, marca_id, modelo_id, ano);
 
             char year = ano.charAt(3);
@@ -48,7 +46,7 @@ public class VehicleServiceImpl implements VehicleService {
             User user = userRepository.findByCpf(cpf);
 
             if (user == null) {
-                return new ResponseEntity("Necessrio um cpf valido!", HttpStatus.BAD_REQUEST);
+                return new ResponseEntity("Necessario um cpf valido!", HttpStatus.BAD_REQUEST);
             }
 
             vehicle.setUser(user);

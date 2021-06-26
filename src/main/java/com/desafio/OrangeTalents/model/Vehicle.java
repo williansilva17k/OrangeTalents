@@ -1,6 +1,5 @@
 package com.desafio.OrangeTalents.model;
 
-import com.desafio.OrangeTalents.model.User;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -9,7 +8,12 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
-
+/*
+Montado com a ajuda de:
+https://www.jsonschema2pojo.org/
+e
+StackOverflow
+ */
 @JsonPropertyOrder({
         "Valor",
         "Marca",
@@ -28,7 +32,6 @@ import javax.validation.constraints.NotNull;
 @Entity(name = "Vehicle")
 @Table(name = "vehicle")
 public class Vehicle {
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
